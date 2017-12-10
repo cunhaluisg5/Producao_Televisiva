@@ -26,5 +26,5 @@ public class Iluminador extends Funcionario implements IFuncionariosApoio{
     @Override
     public double valorSalario() {
         return producao.getTempo() * SALARIO_ILUMINADOR;
-        
+    }
 }
