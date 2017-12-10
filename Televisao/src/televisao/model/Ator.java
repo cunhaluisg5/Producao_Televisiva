@@ -1,14 +1,17 @@
 
 package televisao.model;
 
-public class Ator{
+import java.util.ArrayList;
+
+public class Ator extends Funcionario implements IParticipantes{
     private double salario;
     private Producao producao;
 
     public Ator() {
     }
 
-    public Ator(double salario) {
+    public Ator(Cena cena, double salario, String nome, int idade) {
+        super(nome, idade);
         this.salario = salario;
     }
 
@@ -26,5 +29,10 @@ public class Ator{
 
     public void setProducao(Producao producao) {
         this.producao = producao;
+    }
+
+    @Override
+    public double valorSalario() {
+        return producao.getTempo() * salario;
     }
 }
